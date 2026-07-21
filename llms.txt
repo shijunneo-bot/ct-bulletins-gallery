@@ -1,0 +1,58 @@
+# CleverTap Bulletins - Field Guide No.14
+
+> The campaign your business fires, not your user. One business event, raised via API with no user identity, fans out to the interest segment that cares, as Rich Push, Email, or SMS. No campaign per SKU.
+
+URL: https://shijunneo-bot.github.io/ct-bulletins-gallery/
+Author: SJ Neo (CleverTap CSM). Part of the CleverTap Field Guide Network.
+
+## What Bulletins is
+- A business event (episode release, restock, price or rate change, launch) is raised via POST to /1/targets/trigger.json. The payload carries business_event, name, properties (string values), c-by, when. It contains NO user identity.
+- CleverTap matches an event property to a user-profile property (string match) plus a count condition to find recipients, then dispatches the message.
+- Channels: Rich Push, Email, and SMS, per CleverTap's Bulletins product page.
+- Targeting uses the legacy Segment Builder (PBS or Custom List). Per the Segmentation Rules docs, include and exclude segments are not available for Bulletins.
+- Configurable: interest segment, control group, push TTL.
+- Stats: percentage of users converted, viewed, clicked, technical and non-technical delivery errors, activity log.
+- Region endpoints: in1 (India), sg1 (Singapore), us1 (US), api.clevertap.com (EU), aps3 (Indonesia), mec1 (UAE).
+
+## The three things it is not
+- Not External Trigger: that names one user in the payload and acts on that user. Bulletins carries no user identity and fans out to a crowd.
+- Not Reminders: that counts down to one user's deadline and self-cancels when they act. Bulletins broadcasts one business moment to many.
+- Not a documented Journey entry trigger.
+
+## Build vs buy
+- Lane 1 Buy: native Bulletins; CleverTap owns matching, fan-out, control group, TTL, delivery, stats.
+- Lane 2 Hybrid (recommended): native trigger and match, pair the body with Catalog STP or Linked Content or Recommendations (verify body support with PM), and fire the event automatically from a CMS or catalogue.
+- Lane 3 Build: roll your own orchestration; you re-own dedupe, caps, control groups, error handling.
+
+## The 15 verticals
+Telco, OTT, Fintech, Insurance, E-commerce, F&B, Ride-hailing, Travel, Gaming, EdTech, HealthTech, Grocery, News, Loyalty, Classifieds.
+
+## Each use case includes
+A copyable trigger.json payload, the 5W1H, and the Rich Push, Email, and SMS executions shown as wireframe and mockup.
+
+## Sibling galleries (CleverTap Field Guide Network)
+- 01 AMP Email: https://shijunneo-bot.github.io/amp-email-gallery/
+- 02 Rich Push: https://shijunneo-bot.github.io/rich-push-gallery/
+- 03 SMS: https://shijunneo-bot.github.io/ct-sms-field-guide/
+- 04 WhatsApp: https://shijunneo-bot.github.io/whatsapp-addon-gallery/
+- 05 Custom HTML In-App: https://shijunneo-bot.github.io/ct-template-gallery/
+- 06 Linked Content: https://shijunneo-bot.github.io/ct-linked-content-gallery/
+- 07 Recommendations: https://shijunneo-bot.github.io/ct-recommendations-gallery/
+- 08 Geofencing: https://shijunneo-bot.github.io/ct-geofencing-gallery/
+- 09 Reminders: https://shijunneo-bot.github.io/ct-reminders-gallery/
+- 10 Promos: https://shijunneo-bot.github.io/ct-promos-gallery/
+- 11 Native Display: https://shijunneo-bot.github.io/ct-native-display-gallery/
+- 12 Product Experiences: https://shijunneo-bot.github.io/ct-product-experiences-gallery/
+- 13 App + Web Inbox: https://shijunneo-bot.github.io/ct-inbox-gallery/
+- 14 Bulletins: https://shijunneo-bot.github.io/ct-bulletins-gallery/
+
+## Open questions to verify with a CleverTap PM
+- Plan and packaging entitlement (the product-release page says Advanced; the features and pricing pages say Content Personalization add-on).
+- Whether Liquid Tags, Catalogs, Catalog STP, or Recommendations compile inside the Bulletin body, especially for email.
+- Whether a business event can serve as a Journey entry trigger.
+- Full analytics depth: revenue, funnel, control-group lift, and the exact conversion attribution window.
+- Interplay with global frequency caps, DND hours, and cross-campaign dedupe.
+- Whether NextGen Segment Builder support has shipped since the docs' planned note.
+- Whether RenderMax applies to Bulletin-dispatched push.
+
+Note: all KPI figures on the page are illustrative and all brands are fictional.
