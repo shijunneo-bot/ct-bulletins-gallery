@@ -21,6 +21,7 @@ Single self-contained `index.html` plus a small deploy bundle. All CSS and JS in
 ## What is inside
 - 90 business-event use cases across 15 verticals, six each.
 - Each use case: copyable trigger.json payload, 5W1H, and Rich Push, Email, and SMS executions as wireframe and mockup.
+- Each card previews its best-fit hero channel (25 push, 32 email, 33 SMS); filter the gallery by channel, vertical, or pattern.
 - Grounded mechanics, differentiation, three build-vs-buy lanes, a decision table, measurement, and a 20-question FAQ.
 
 ## Grounded vs illustrative

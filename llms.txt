@@ -28,7 +28,7 @@ Author: SJ Neo (CleverTap CSM). Part of the CleverTap Field Guide Network.
 Telco, OTT, Fintech, Insurance, E-commerce, F&B, Ride-hailing, Travel, Gaming, EdTech, HealthTech, Grocery, News, Loyalty, Classifieds.
 
 ## Each use case includes
-A copyable trigger.json payload, the 5W1H, and the Rich Push, Email, and SMS executions shown as wireframe and mockup.
+A copyable trigger.json payload, the 5W1H, and the Rich Push, Email, and SMS executions shown as wireframe and mockup. Each card previews its best-fit hero channel, and the gallery can be filtered by channel.
 
 ## Sibling galleries (CleverTap Field Guide Network)
 - 01 AMP Email: https://shijunneo-bot.github.io/amp-email-gallery/
